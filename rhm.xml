@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://oderjunkie.github.io/rhm rhm.xsd"  xml:lang="en" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta viewport="width=device-width, initial-scale=1"/>
+    <title>Restricted Hypertext Markup</title>
+  </head>
+  <body>
+    <h1>what is restricted hypertext markup</h1>
+    <hr/>
+    <p>restricted hypertext markup, or more simply RHM, is a strict subset of XHTML1, which itself is a subset of HTML.</p>
+    <p>RHM was created for the purpose of disallowing webpages that are syntactically valid but don't make logical sense.</p>
+  </body>
+</html>
