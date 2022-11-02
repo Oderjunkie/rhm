@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/xhtml" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:annotation>
     <xs:appinfo>Restricted Hypertext Markup</xs:appinfo>
     <xs:documentation xml:lang="en">
@@ -21,7 +21,6 @@
         </xs:complexType>
       </xs:element>
       <xs:element name="title" type="xs:string"/>
-      <xs:any/>
     </xs:all>
   </xs:complexType>
 
@@ -34,36 +33,45 @@
   </xs:complexType>
 
   <xs:complexType name="rhm_a" mixed="true">
+    <xs:choice maxOccurs="unbounded">
+      <xs:element name="img" type="rhm_img"/>
+    </xs:choice>
     <xs:attribute name="href" type="xs:string" use="required"/>
     <xs:attribute name="id" type="xs:string"/>
     <xs:attribute name="class" type="xs:string"/>
     <xs:attribute name="name" type="xs:string"/>
-    <xs:choice maxOccurs="unbounded">
+  </xs:complexType>
+
+  <xs:complexType name="rhm_p" mixed="true">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
       <xs:element name="img" type="rhm_img"/>
+      <xs:element name="br"/>
+      <xs:element name="hr"/>
     </xs:choice>
   </xs:complexType>
 
   <xs:complexType name="rhm_body">
-    <xs:choice maxOccurs="unbounded">
-      <xs:element name="p">
-         <xs:complexType mixed="true">
-           <xs:choice maxOccurs="unbounded">
-             <xs:element name="img" type="rhm_img"/>
-             <xs:element name="br"/>
-             <xs:element name="hr"/>
-           </xs:choice>
-         </xs:complexType>
-      </xs:element>
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="p" type="rhm_p"/>
+      <xs:element name="h1" type="xs:string"/>
+      <xs:element name="h2" type="xs:string"/>
+      <xs:element name="h3" type="xs:string"/>
+      <xs:element name="h4" type="xs:string"/>
+      <xs:element name="h5" type="xs:string"/>
+      <xs:element name="h6" type="xs:string"/>
+      <xs:element name="img" type="rhm_img"/>
+      <xs:element name="br"/>
+      <xs:element name="hr"/>
     </xs:choice>
   </xs:complexType>
   
   <xs:element name="html">
     <xs:complexType>
-      <xs:attribute name="lang" type="xs:string" fixed="en" use="required"/>
       <xs:sequence>
         <xs:element name="head" type="rhm_head"/>
         <xs:element name="body" type="rhm_body"/>
       </xs:sequence>
+      <xs:attribute name="lang" type="xs:string" fixed="en" use="required"/>
     </xs:complexType>
   </xs:element>
 </xs:schema>
