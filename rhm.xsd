@@ -20,8 +20,8 @@
           <xs:attribute name="viewport" type="xs:string" fixed="width=device-width, initial-scale=1" use="required"/>
         </xs:complexType>
       </xs:element>
-      <xs:element name="title" type="xs:string">
-      <any/>
+      <xs:element name="title" type="xs:string"/>
+      <xs:any/>
     </xs:all>
   </xs:complexType>
 
@@ -39,7 +39,7 @@
     <xs:attribute name="class" type="xs:string"/>
     <xs:attribute name="name" type="xs:string"/>
     <xs:choice maxOccurs="unbounded">
-      <xs:element name="img" type="rhm_img">
+      <xs:element name="img" type="rhm_img"/>
     </xs:choice>
   </xs:complexType>
 
@@ -61,8 +61,8 @@
     <xs:complexType>
       <xs:attribute name="lang" type="xs:string" fixed="en" use="required"/>
       <xs:sequence>
-        <xs:element name="head" type="rhm_head">
-        <xs:element name="body" type="rhm_body">
+        <xs:element name="head" type="rhm_head"/>
+        <xs:element name="body" type="rhm_body"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
